@@ -1,5 +1,20 @@
 import * as turf from '@turf/turf';
 
+export const calculateBuffer = (geojson, meters) => {
+  return turf.buffer(geojson, meters / 1000, { units: 'kilometers' });
+};
+
+export const validateGeoJSON = (data) => {
+  if (!data || !data.type) throw new Error('Invalid GeoJSON: missing type');
+  if (data.type === 'Point') {
+    const coords = data.coordinates;
+    if (!Array.isArray(coords) || coords.length < 2 || coords.some(c => c === null || c === undefined || isNaN(c))) {
+      throw new Error('Invalid GeoJSON: malformed coordinates');
+    }
+  }
+  return true;
+};
+
 export const calculateVolume = (area, height, rs = 1.0) => {
   return area * height * rs;
 };

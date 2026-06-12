@@ -2,18 +2,36 @@ import React, { useState, useEffect } from 'react';
 import * as turf from '@turf/turf';
 import { MapPin, CheckCircle, AlertTriangle } from 'lucide-react';
 
+export const saveToLedger = (key, data) => {
+  try {
+    const serialized = JSON.stringify({ data, timestamp: Date.now() });
+    localStorage.setItem(key, serialized);
+  } catch (e) {
+    console.error("Storage full or quota exceeded", e);
+  }
+};
+
+export const getFromLedger = (key) => {
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item).data : null;
+  } catch (e) {
+    return null;
+  }
+};
+
 const LocalLedger = ({ buffer60 }) => {
   const [ledger, setLedger] = useState([]);
   const [status, setStatus] = useState('');
 
   useEffect(() => {
-    const stored = localStorage.getItem('santiago_ledger');
-    if (stored) setLedger(JSON.parse(stored));
+    const stored = getFromLedger('santiago_ledger');
+    if (stored) setLedger(stored);
   }, []);
 
   const saveLedger = (newLedger) => {
     setLedger(newLedger);
-    localStorage.setItem('santiago_ledger', JSON.stringify(newLedger));
+    saveToLedger('santiago_ledger', newLedger);
   };
 
   const verifyLocation = () => {
