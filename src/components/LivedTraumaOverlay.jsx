@@ -1,7 +1,7 @@
 import React from 'react';
-import { Shield, UploadCloud, Paintbrush, RefreshCw } from 'lucide-react';
+import { Shield, UploadCloud, Paintbrush, RefreshCw, Undo2, Trash2 } from 'lucide-react';
 
-const LivedTraumaOverlay = ({ isPainting, setIsPainting, handleFileUpload, location, setLocation }) => {
+const LivedTraumaOverlay = ({ isPainting, togglePainting, onUndo, onClear, handleFileUpload, location, setLocation }) => {
   return (
     <div className="absolute top-4 right-4 z-[1000] flex flex-col gap-2">
       <div className="bg-slate-900 bg-opacity-90 backdrop-blur border border-slate-700 p-4 rounded-lg shadow-2xl w-56">
@@ -23,12 +23,27 @@ const LivedTraumaOverlay = ({ isPainting, setIsPainting, handleFileUpload, locat
           </div>
 
           <button
-            onClick={() => setIsPainting(!isPainting)}
+            onClick={togglePainting}
             className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded text-xs font-semibold transition-colors w-full ${isPainting ? 'bg-red-600 hover:bg-red-700 text-white' : 'bg-purple-600 hover:bg-purple-700 text-white'}`}
           >
             <Paintbrush className="w-3.5 h-3.5" />
             {isPainting ? 'Stop Painting Trauma' : 'Paint Lived Heat Trauma'}
           </button>
+
+          <div className="flex gap-2">
+            <button
+              onClick={onUndo}
+              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-semibold bg-yellow-700 hover:bg-yellow-600 text-white transition-colors flex-1"
+            >
+              <Undo2 className="w-3 h-3" /> Undo
+            </button>
+            <button
+              onClick={onClear}
+              className="flex items-center justify-center gap-1.5 px-3 py-2 rounded text-xs font-semibold bg-red-800 hover:bg-red-700 text-white transition-colors flex-1"
+            >
+              <Trash2 className="w-3 h-3" /> Clear
+            </button>
+          </div>
 
           <div className="border border-dashed border-slate-700 rounded p-3 text-center transition hover:bg-slate-800">
             <label className="cursor-pointer flex flex-col items-center justify-center gap-1.5 text-[11px] text-slate-300 font-medium">

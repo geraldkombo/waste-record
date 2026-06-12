@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, GeoJSON, useMap, useMapEvents } from 'react-leaflet';
+import L from 'leaflet';
 import * as turf from '@turf/turf';
+import { useTraumaBrush } from '../hooks/useTraumaBrush';
+import LivedTraumaOverlay from './LivedTraumaOverlay';
 
 const RecenterMap = ({ center }) => {
   const map = useMap();
@@ -10,27 +13,24 @@ const RecenterMap = ({ center }) => {
   return null;
 };
 
-const PaintTraumaBrush = ({ isPainting, setTraumaPolygons }) => {
+const PaintTraumaBrush = ({ isPainting, addStroke }) => {
   useMapEvents({
-    mousemove(e) {
-      if (isPainting && e.originalEvent.buttons === 1) {
-        const pt = turf.point([e.latlng.lng, e.latlng.lat]);
-        const brushCircle = turf.buffer(pt, 0.012, { units: 'kilometers' });
-        setTraumaPolygons(prev => {
-          if (!prev) return brushCircle;
-          try {
-            return turf.union(prev, brushCircle);
-          } catch (err) {
-            return prev;
-          }
-        });
-      }
+    click(e) {
+      if (!isPainting) return;
+      const feature = {
+        type: 'Feature',
+        properties: { timestamp: Date.now(), type: 'trauma_mark' },
+        geometry: { type: 'Point', coordinates: [e.latlng.lng, e.latlng.lat] }
+      };
+      addStroke(feature);
     }
   });
   return null;
 };
 
-const MapViewer = ({ spatialData, isPainting, traumaPolygons, setTraumaPolygons, location }) => {
+const MapViewer = ({ spatialData, location, setLocation, handleFileUpload }) => {
+  const { strokes, isPainting, setIsPainting, addStroke, undoStroke, clearStrokes } = useTraumaBrush();
+
   if (!spatialData) {
     return (
       <div className="flex items-center justify-center h-full text-slate-400 text-sm">
@@ -52,48 +52,75 @@ const MapViewer = ({ spatialData, isPainting, traumaPolygons, setTraumaPolygons,
     return { color: '#22c55e', weight: 1, fillColor: '#22c55e', fillOpacity: 0.4 };
   };
 
+  const strokeCollection = strokes.length > 0 ? {
+    type: 'FeatureCollection',
+    features: strokes
+  } : null;
+
   return (
-    <MapContainer center={mapCenter} zoom={15} className="h-full w-full relative z-0">
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&copy; OpenStreetMap contributors"
+    <div className="relative h-full w-full">
+      <LivedTraumaOverlay
+        isPainting={isPainting}
+        togglePainting={() => setIsPainting(!isPainting)}
+        onUndo={undoStroke}
+        onClear={clearStrokes}
+        handleFileUpload={handleFileUpload}
+        location={location}
+        setLocation={setLocation}
       />
 
-      <RecenterMap center={mapCenter} />
-
-      <GeoJSON
-        key={`b60-${location}`}
-        data={spatialData.buffer60}
-        style={{ color: '#fb923c', weight: 0, fillColor: '#fb923c', fillOpacity: 0.2 }}
-      />
-
-      <GeoJSON
-        key={`b30-${location}`}
-        data={spatialData.buffer30}
-        style={{ color: '#f87171', weight: 0, fillColor: '#f87171', fillOpacity: 0.25 }}
-      />
-
-      <GeoJSON
-        key={`hwm-${location}`}
-        data={spatialData.hwmLine}
-        style={{ color: '#0f172a', weight: 3, dashArray: '6, 6' }}
-      />
-
-      <GeoJSON
-        key={`build-${location}-${spatialData.buildings.features.length}`}
-        data={spatialData.buildings}
-        style={getBuildingStyle}
-      />
-
-      {traumaPolygons && (
-        <GeoJSON
-          data={traumaPolygons}
-          style={{ color: '#a855f7', weight: 0, fillColor: '#a855f7', fillOpacity: 0.5 }}
+      <MapContainer center={mapCenter} zoom={15} className="h-full w-full relative z-0" style={{ cursor: isPainting ? 'crosshair' : 'default' }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; OpenStreetMap contributors"
         />
-      )}
 
-      <PaintTraumaBrush isPainting={isPainting} setTraumaPolygons={setTraumaPolygons} />
-    </MapContainer>
+        <RecenterMap center={mapCenter} />
+
+        <GeoJSON
+          key={`b60-${location}`}
+          data={spatialData.buffer60}
+          style={{ color: '#fb923c', weight: 0, fillColor: '#fb923c', fillOpacity: 0.2 }}
+        />
+
+        <GeoJSON
+          key={`b30-${location}`}
+          data={spatialData.buffer30}
+          style={{ color: '#f87171', weight: 0, fillColor: '#f87171', fillOpacity: 0.25 }}
+        />
+
+        <GeoJSON
+          key={`hwm-${location}`}
+          data={spatialData.hwmLine}
+          style={{ color: '#0f172a', weight: 3, dashArray: '6, 6' }}
+        />
+
+        <GeoJSON
+          key={`build-${location}-${spatialData.buildings.features.length}`}
+          data={spatialData.buildings}
+          style={getBuildingStyle}
+        />
+
+        {strokeCollection && (
+          <GeoJSON
+            key={`strokes-${strokes.length}`}
+            data={strokeCollection}
+            pointToLayer={(feature, latlng) => {
+              return L.circleMarker(latlng, {
+                radius: 8,
+                fillColor: '#a855f7',
+                color: '#7e22ce',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.7
+              });
+            }}
+          />
+        )}
+
+        <PaintTraumaBrush isPainting={isPainting} addStroke={addStroke} />
+      </MapContainer>
+    </div>
   );
 };
 

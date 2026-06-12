@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MapViewer from './components/MapViewer';
-import LivedTraumaOverlay from './components/LivedTraumaOverlay';
 import LocalLedger from './components/LocalLedger';
 import { generateGeospatialData, calculateRunoff, calculateLVS } from './utils/spatialEngine';
-import { Shield, Compass, BarChart3, Sliders } from 'lucide-react';
+import { Compass, BarChart3, Sliders } from 'lucide-react';
 import * as turf from '@turf/turf';
 import L from 'leaflet';
 
@@ -19,8 +18,6 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 const App = () => {
   const [spatialData, setSpatialData] = useState(null);
-  const [isPainting, setIsPainting] = useState(false);
-  const [traumaPolygons, setTraumaPolygons] = useState(null);
   const [precip, setPrecip] = useState(112);
   const [location, setLocation] = useState('nairobi');
   const [stats, setStats] = useState({ zone1: 0, zone2: 0, safe: 0, totalVolume: 0 });
@@ -145,19 +142,11 @@ const App = () => {
       </div>
 
       <div className="flex-1 relative">
-        <LivedTraumaOverlay
-          isPainting={isPainting}
-          setIsPainting={setIsPainting}
-          handleFileUpload={handleFileUpload}
-          location={location}
-          setLocation={setLocation}
-        />
         <MapViewer
           spatialData={spatialData}
-          isPainting={isPainting}
-          traumaPolygons={traumaPolygons}
-          setTraumaPolygons={setTraumaPolygons}
           location={location}
+          setLocation={setLocation}
+          handleFileUpload={handleFileUpload}
         />
       </div>
     </div>
