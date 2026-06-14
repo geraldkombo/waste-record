@@ -189,8 +189,8 @@ PROs requiring proof of collection can:
 
 ## Schema Design Decisions
 
-1. **Flat properties** — No nested objects. GIS software handles flat attribute tables most reliably.
-2. **ISO 8601 timestamps** — Universal date format, sorted correctly by all GIS platforms.
-3. **Container + fullness instead of raw volume** — Containers (Sack, Cart) are locally understood units. Combining with fullness percentage enables estimation without scales.
-4. **Conservative density estimates** — Using median bulk density values ensures estimates are defensible and not inflated.
-5. **Feature type discrimination** — Collection logs, hazard marks, and site visits are all GeoJSON Points but distinguished by `feature_type` and property structures, enabling filtered visualization.
+1. **Flat properties** - No nested objects. GIS software handles flat attribute tables most reliably.
+2. **ISO 8601 timestamps** - Universal date format, sorted correctly by all GIS platforms.
+3. **Container + fullness instead of raw volume** - Containers (Sack, Cart) are locally understood units. Combining with fullness percentage enables estimation without scales.
+4. **Conservative density estimates** - Using median bulk density values ensures estimates are defensible and not inflated.
+5. **Feature type discrimination** - Collection logs, hazard marks, and site visits are all GeoJSON Points but distinguished by `feature_type` and property structures, enabling filtered visualization.

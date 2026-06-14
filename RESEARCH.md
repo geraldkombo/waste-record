@@ -11,7 +11,7 @@ This project is grounded in ongoing organizing around the Sustainable Waste Mana
 | **EPR pricing set without pickers** | PROs determining prices per kg without picker representation; pickers discovering rates after decisions made | Collection Pricing slider (KES 5–100/kg) lets pickers model their own price scenarios; GeoJSON export provides counter-data for negotiation |
 | **The Ghana formula problem** | NEMA using a 41 kg/day formula from Ghana that doesn't match Kenyan waste composition or collection patterns | Heuristics engine with Kenyan-specific material densities and local container volumes (Sack, Cart) |
 | **Dandora dumpsite politics** | Organizing around dumpsite closure threats, relocation without alternatives, cartel control of incoming waste trucks | 4-ward system including Dandora with dumpsite boundary mapping; hazard tagging for cartel activity |
-| **"Chokora" stigma** | Pervasive societal stigma that blocks formal recognition, contracts, insurance, minimum wage | The entire EPR Evidence Pack export is designed as a formalization tool — GPS-stamped data counters stigma with evidence |
+| **"Chokora" stigma** | Pervasive societal stigma that blocks formal recognition, contracts, insurance, minimum wage | The entire EPR Evidence Pack export is designed as a formalization tool - GPS-stamped data counters stigma with evidence |
 | **Harassment by Kanjo & cartels** | County enforcement officers and private cartels blocking access, demanding bribes, confiscating materials | Hazard/incident tagging with discreet photo evidence capture; data stays on-device until cooperative chooses to export |
 | **17 sub-county organizing** | Organizers spread across Nairobi's sub-counties with no shared spatial picture of conditions or collection activity | GeoJSON export as a universal spatial format; City Dashboard for aggregated ward-level statistics |
 | **Health impacts undocumented** | Respiratory disease, injuries from medical waste, toxic smoke from open burning | Hazard tagging captures type and location of health incidents; photo evidence provides medical-legal documentation |
@@ -20,11 +20,11 @@ This project is grounded in ongoing organizing around the Sustainable Waste Mana
 
 The chat reveals a movement at a critical juncture:
 
-- **December 2024 EPR Regulations** are being operationalized — the legal framework exists but the data infrastructure for implementation is absent
-- **Dandora** — the largest dumpsite — is at the center of organizing around closure, relocation, and just transition
-- **County consolidation** — waste pickers are being asked to register and consolidate, but without clear terms for inclusion or compensation
-- **Pricing disputes** — PET, cardboard, and metal prices are set by middlemen with no transparency; pickers want a formal pricing index
-- **Meeting overload** — the group coordinates across multiple sub-county meetings, county assembly sessions, and NEMA consultations, but lacks shared data to advocate from
+- **December 2024 EPR Regulations** are being operationalized - the legal framework exists but the data infrastructure for implementation is absent
+- **Dandora** - the largest dumpsite - is at the center of organizing around closure, relocation, and just transition
+- **County consolidation** - waste pickers are being asked to register and consolidate, but without clear terms for inclusion or compensation
+- **Pricing disputes** - PET, cardboard, and metal prices are set by middlemen with no transparency; pickers want a formal pricing index
+- **Meeting overload** - the group coordinates across multiple sub-county meetings, county assembly sessions, and NEMA consultations, but lacks shared data to advocate from
 
 ---
 
@@ -42,15 +42,15 @@ The Act fundamentally reformed Kenya's waste governance by:
 
 Gazetted November 2024, these regulations operationalize the Act by:
 
-1. **Mandating Producer Responsibility Organizations (PROs)** — collective schemes that producers must fund
+1. **Mandating Producer Responsibility Organizations (PROs)** - collective schemes that producers must fund
 2. **Establishing 5 statutory EPR categories:**
    - Category 1: Non-hazardous packaging (plastics, paper, glass, aluminum)
    - Category 2: Hazardous products packaging
    - Category 3: Electrical and Electronic Equipment (e-waste)
    - Category 4: End-of-life motor vehicles
    - Category 5: Non-packaging items
-3. **Requiring Monthly Volume Declarations (MVDs)** — producers must report tonnages placed in the market
-4. **Enabling compliance via PRO membership** — all producers must join a NEMA-approved PRO
+3. **Requiring Monthly Volume Declarations (MVDs)** - producers must report tonnages placed in the market
+4. **Enabling compliance via PRO membership** - all producers must join a NEMA-approved PRO
 
 ### The Data Gap
 
@@ -87,8 +87,8 @@ Waste Record directly addresses this gap by providing a standardized, offline, G
 - Data collection must be grounded in informed consent
 
 **Applied in Waste Record:**
-- **Zero-server architecture** — data never leaves the device until explicit export
-- **No telemetry, no analytics, no cloud** — the cooperative is the sole data custodian
+- **Zero-server architecture** - data never leaves the device until explicit export
+- **No telemetry, no analytics, no cloud** - the cooperative is the sole data custodian
 - **Visual consent prompts** before any export is generated
 
 ### Brazil's Catadores and UNICATA
@@ -100,9 +100,9 @@ Waste Record directly addresses this gap by providing a standardized, offline, G
 ### KoboToolbox / ODK / OpenMapKit
 
 **Assessment:** These are the industry-standard humanitarian GIS tools. Key limitations for the picker use case:
-- **Client-server architecture** — data syncs to a central database, shifting control away from the cooperative
-- **Generic survey forms** — not optimized for rapid, high-frequency spatial event logging
-- **No specialized waste sector schema** — no material types, container volumes, or EPR category mapping
+- **Client-server architecture** - data syncs to a central database, shifting control away from the cooperative
+- **Generic survey forms** - not optimized for rapid, high-frequency spatial event logging
+- **No specialized waste sector schema** - no material types, container volumes, or EPR category mapping
 
 **Waste Record's differentiation:** Zero-server sovereignty + specialized picker workflow + EPR-native schema.
 
@@ -123,7 +123,7 @@ Waste Record directly addresses this gap by providing a standardized, offline, G
 | Glass | 355.5 | 35.6 | 533.3 |
 | Organic/Food | 255 | 25.5 | 382.5 |
 
-**Methodology:** `estimatedWeight = containerVolume × fullnessPercentage × density`
+**Methodology:** `estimatedWeight = containerVolume �- fullnessPercentage �- density`
 
 These values are conservative estimates for loose, uncompacted materials as collected manually. Baled or compacted materials would have higher densities. The tool uses the median value from each density range to ensure defensible, conservative estimates for NEMA auditors.
 
@@ -138,4 +138,4 @@ These values are conservative estimates for loose, uncompacted materials as coll
 | **Decentralized / IPFS** | Web3 storage | Eliminated: complexity, no clear benefit over local file for this scale |
 | **Pure client-side + file export** | **Waste Record** | Selected: zero operational cost, full data sovereignty, works offline, GeoJSON is universal |
 
-The key insight: **a cooperative does not need a server to prove its value to a regulator.** A GeoJSON file on a phone, opened in a county official's QGIS, is as persuasive as a cloud dashboard — and does not require the cooperative to maintain infrastructure, pay hosting fees, or trust a third party with its data.
+The key insight: **a cooperative does not need a server to prove its value to a regulator.** A GeoJSON file on a phone, opened in a county official's QGIS, is as persuasive as a cloud dashboard - and does not require the cooperative to maintain infrastructure, pay hosting fees, or trust a third party with its data.

@@ -1,7 +1,7 @@
 {
   "name": "waste-record",
   "version": "1.0.0",
-  "description": "Waste Record — Offline-first collection logging and evidence export for waste picker cooperatives.",
+  "description": "Waste Record - Offline-first collection logging and evidence export for waste picker cooperatives.",
   "type": "module",
   "scripts": {
     "dev": "vite",

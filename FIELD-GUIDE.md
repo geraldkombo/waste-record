@@ -25,11 +25,11 @@
     → Glass
     → Organic
 5. Select container:
-    → Sack (100L) — for small/medium loads carried on back
-    → Cart (1.5m³) — for full pushcart loads
+    → Sack (100L) - for small/medium loads carried on back
+    → Cart (1.5m³) - for full pushcart loads
 6. Set fullness (25% / 50% / 75% / 100%)
    → Estimate how full the container is visually
-7. View estimated weight — updates live as you change material/container/fullness
+7. View estimated weight - updates live as you change material/container/fullness
 8. (Optional) Tap "Capture Photo Evidence" → take a photo
    → Photo is compressed on your phone (no upload)
    → Preview shows in the form
@@ -44,7 +44,7 @@
 
 - **Fullness:** 25% = bottom of sack covered, 50% = half full, 75% = three-quarters, 100% = overflowing/heaped
 - **Consistency:** Use the same container type for the same route to make estimates comparable over time
-- **Photos:** Take a photo of the loaded container for visual verification — a jury or NEMA officer can verify a photo alongside the GPS coordinate
+- **Photos:** Take a photo of the loaded container for visual verification - a jury or NEMA officer can verify a photo alongside the GPS coordinate
 - **Material separation:** If you collect multiple materials, log each separately for accurate weight breakdown
 
 ---
@@ -103,7 +103,7 @@
 
 - **Proof of presence:** Shows you were actually at the site
 - **Route evidence:** Builds a time-stamped location history for advocacy
-- **Verification rate:** The City Dashboard shows what percentage of visits are verified — high rates strengthen your data's credibility
+- **Verification rate:** The City Dashboard shows what percentage of visits are verified - high rates strengthen your data's credibility
 
 ---
 
@@ -141,7 +141,7 @@ The GeoJSON file contains:
 
 | Task | Works Offline? |
 |------|---------------|
-| Open the app | ✅ (after first load — PWA) |
+| Open the app | ✅ (after first load - PWA) |
 | View map | ⚠️ (tiles cached from previous visits) |
 | Switch wards | ✅ (synthetic data generated locally) |
 | Log collections | ✅ |

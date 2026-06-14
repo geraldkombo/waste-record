@@ -2,11 +2,11 @@
 
 ## Design Principles
 
-1. **Zero-server sovereignty** — No backend, no database, no cloud. The cooperative owns its data completely.
-2. **Offline-first** — Must function entirely without internet in the field. Only internet dependency is initial app load.
-3. **Mobile-first** — Target device is a low-end Android smartphone with limited RAM and storage.
-4. **Legally legible output** — Exported data must be immediately useful to NEMA auditors, county planners, and PROs without transformation.
-5. **Accessible to semi-literate users** — Minimize text, maximize visual and audio documentation.
+1. **Zero-server sovereignty** - No backend, no database, no cloud. The cooperative owns its data completely.
+2. **Offline-first** - Must function entirely without internet in the field. Only internet dependency is initial app load.
+3. **Mobile-first** - Target device is a low-end Android smartphone with limited RAM and storage.
+4. **Legally legible output** - Exported data must be immediately useful to NEMA auditors, county planners, and PROs without transformation.
+5. **Accessible to semi-literate users** - Minimize text, maximize visual and audio documentation.
 
 ---
 
@@ -14,11 +14,11 @@
 
 ### React 18 + Vite 5
 
-**Why React:** Component model maps naturally to the modular UI (side panel, map, overlay, forms). Large ecosystem for GIS tooling (react-leaflet). Familiar to most frontend developers — important for a project that needs to be maintained by the team.
+**Why React:** Component model maps naturally to the modular UI (side panel, map, overlay, forms). Large ecosystem for GIS tooling (react-leaflet). Familiar to most frontend developers - important for a project that needs to be maintained by the team.
 
 **Why Vite:** Fastest build tool for React. Native ES module support (important since we use `"type": "module"`). Efficient HMR for development.
 
-**Tradeoff:** React bundle is ~40 KB gzipped — acceptable for a PWA that loads once and caches.
+**Tradeoff:** React bundle is ~40 KB gzipped - acceptable for a PWA that loads once and caches.
 
 ### Leaflet 1.9 + react-leaflet 4
 
@@ -36,14 +36,14 @@
 
 **Bundle size management:**
 - Current: 874 KB JS (mainly Turf + React + Leaflet + Pica)
-- PWA precaches this once — subsequent loads are instant from Cache Storage
+- PWA precaches this once - subsequent loads are instant from Cache Storage
 - Chunk size warning is expected and acceptable for a PWA
 
 ### Dexie.js + IndexedDB
 
 **Why not localStorage:** localStorage is limited to ~5 MB, is synchronous (blocks the main thread), and can only store strings. Spatial data with photo blobs will rapidly exceed this limit.
 
-**Why Dexie.js:** Provides a clean, promise-based API over IndexedDB. `useLiveQuery` hook enables reactive UI — components re-render automatically when IndexedDB data changes. Schema with multiple stores (features, visits, media) keeps related data together and queryable.
+**Why Dexie.js:** Provides a clean, promise-based API over IndexedDB. `useLiveQuery` hook enables reactive UI - components re-render automatically when IndexedDB data changes. Schema with multiple stores (features, visits, media) keeps related data together and queryable.
 
 **Schema:**
 ```javascript
@@ -53,7 +53,7 @@ media: '++id, featureId'                    // Compressed photo blobs linked to 
 geoCache: 'url'                             // Fetch cache for remote GeoJSON
 ```
 
-**Media separation:** Heavy photo blobs are stored in a separate `media` store, linked to features via `featureId`. This ensures querying thousands of spatial points for map rendering remains fast — photo data is loaded only when a specific marker popup is opened.
+**Media separation:** Heavy photo blobs are stored in a separate `media` store, linked to features via `featureId`. This ensures querying thousands of spatial points for map rendering remains fast - photo data is loaded only when a specific marker popup is opened.
 
 ### Pica (Client-Side Image Compression)
 
@@ -76,11 +76,11 @@ geoCache: 'url'                             // Fetch cache for remote GeoJSON
 - `skipWaiting()` + `clients.claim()` ensures the new SW activates immediately on update
 
 **Manifest configuration:**
-- `display: 'standalone'` — app launches without browser chrome when installed to home screen
-- `orientation: 'portrait'` — optimal for field use on phones
+- `display: 'standalone'` - app launches without browser chrome when installed to home screen
+- `orientation: 'portrait'` - optimal for field use on phones
 - Theme color: `#0f172a` (slate-900, matching the dark UI)
 
-**Caching:** 7 entries, ~869 KB precached. This includes the entire app shell — React bundle, Leaflet, Turf.js, CSS, icons. After first load, the app opens instantly with no network requests.
+**Caching:** 7 entries, ~869 KB precached. This includes the entire app shell - React bundle, Leaflet, Turf.js, CSS, icons. After first load, the app opens instantly with no network requests.
 
 ---
 
@@ -190,11 +190,11 @@ App
 
 ## Security Model
 
-1. **No network transmission** — All data lives in IndexedDB. No data is sent over the network. No API keys, no analytics, no telemetry.
-2. **No authentication** — The app does not authenticate users. This is intentional: authentication requires a server. The device *is* the identity.
-3. **File-based sharing** — Data leaves the device only via explicit file export (GeoJSON download). The user chooses where to share it (Bluetooth, WhatsApp, USB, email).
-4. **No surveillance surface** — There is no server to hack, no database to breach, no cloud account to compromise.
-5. **Physical security risk** — If a device is confiscated, the IndexedDB data can be read. Mitigation: a PIN-protected lock screen or self-destruct mechanism is a planned enhancement.
+1. **No network transmission** - All data lives in IndexedDB. No data is sent over the network. No API keys, no analytics, no telemetry.
+2. **No authentication** - The app does not authenticate users. This is intentional: authentication requires a server. The device *is* the identity.
+3. **File-based sharing** - Data leaves the device only via explicit file export (GeoJSON download). The user chooses where to share it (Bluetooth, WhatsApp, USB, email).
+4. **No surveillance surface** - There is no server to hack, no database to breach, no cloud account to compromise.
+5. **Physical security risk** - If a device is confiscated, the IndexedDB data can be read. Mitigation: a PIN-protected lock screen or self-destruct mechanism is a planned enhancement.
 
 ---
 

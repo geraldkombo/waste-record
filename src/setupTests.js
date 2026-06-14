@@ -1,1 +1,1 @@
-// setupTests — Vitest environment configuration for Waste Record
+// setupTests - Vitest environment configuration for Waste Record
