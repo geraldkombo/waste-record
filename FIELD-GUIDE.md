@@ -6,37 +6,6 @@
 2. **Allow GPS** when prompted. The app works without GPS but site verification requires location access.
 3. **Allow camera** when using photo evidence. Photos are compressed on your phone and never uploaded anywhere.
 
----
-
-## Sheng Glossary
-
-Using Sheng (Nairobi street slang) in the interface makes the tool feel like it belongs to the community. Here are the terms used in Waste Record:
-
-| Term | Meaning | Used In |
-|------|---------|---------|
-| **Baze** | Basecamp, gathering space, cooperative meeting point | Baze Route Ledger |
-| **Cart** | Manual pushcart (standard: 1.5 m³ volume) | Collection Form container selector |
-
-| **Sack** | Standard 100-liter agricultural sack | Collection Form container selector |
-
-| **PET Plastics** | Bottles (clear plastic) | Material selector |
-
-| **HDPE Plastics** | Bottles (opaque plastic) | Material selector |
-
-| **Cardboard** | Cardboard / paper packaging | Material selector |
-
-| **Mixed Paper** | Mixed paper | Material selector |
-
-| **Aluminum Cans** | Metal cans (aluminum) | Material selector |
-
-| **Steel** | Steel / scrap metal | Material selector |
-
-| **Glass** | Bottles (glass) | Material selector |
-
-| **Organic** | Organic food waste | Material selector |
-| **Nyarere** | Rubber / tyres | Future material category |
-
----
 
 ## Collection Logging Workflow
 
@@ -167,22 +136,6 @@ The GeoJSON file contains:
 3. **Layer → Add Layer → Add Vector Layer**
 4. Select the downloaded file
 5. You now have a professional-grade map layer with full attribute data
-
----
-
-## Sheng-Localized Interface Reference
-
-| English | Waste Record UI | Location |
-|---------|-----------|----------|
-| Collection Route Ledger | **Baze Route Ledger** | Side panel |
-| Log Site Visit | **Log Site Visit** | Baze Route Ledger |
-| Material Type | **Material type dropdown** | Collection Form |
-| Container | **Container selector** | Collection Form |
-| Photo Evidence | **Capture Photo Evidence** | Collection Form |
-| Tag Hazard / Incident | **Tag Hazard / Incident** | Field Toolkit overlay |
-| Download EPR Evidence Pack | **Download EPR Evidence Pack** | Field Toolkit overlay |
-
----
 
 ## Offline Usage
 
