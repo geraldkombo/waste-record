@@ -110,8 +110,8 @@ git push origin master
 | Gerald Kombo | geraldshikunyi@gmail.com | Lead Developer |
 | Peter Maina | nj.peter.maina@gmail.com | Blockchain & Value Chain |
 | Gisore Nyabuti | gisorenyabuti@gmail.com | Chairman, Kenya National Waste Pickers Welfare Association |
-| Shadrack Otieno | shadrackmeshack7@gmail.com | Community Engagement & Developer |
-| James Murithi | jamespmurithi@gmail.com | |
+| Shadrack Otieno | shadrackmeshack7@gmail.com | Community & Developer |
+| James Murithi | jamespmurithi@gmail.com | Developer |
 
 Built for the **Innovation for Cities** program — a collaboration between Nairobi's waste picker cooperatives, urban tech builders, and policy advocates.
 
