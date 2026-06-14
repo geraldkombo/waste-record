@@ -109,7 +109,7 @@ git push origin master
 |------|-------|------|
 | Gerald Kombo | geraldshikunyi@gmail.com | Lead Developer |
 | Peter Maina | nj.peter.maina@gmail.com | Project Mocha |
-| Gisore Nyabuti | gisorenyabuti@gmail.com | Spatial Data |
+| Gisore Nyabuti | gisorenyabuti@gmail.com | Chairman, KNWPWA |
 | Shadrack Otieno | shadrackmeshack7@gmail.com | Community Engagement |
 | James Murithi | jamespmurithi@gmail.com | |
 

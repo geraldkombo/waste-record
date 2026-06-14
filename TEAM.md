@@ -25,7 +25,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 - Contribution to Waste Record: Advised on material classification, pricing dynamics, and cooperative data needs from Project Mocha's waste sector experience
 
 ### Gisore Nyabuti
-**Spatial Data Specialist**
+**Chairman, Kenya National Waste Pickers Welfare Association**
 
 - Email: gisorenyabuti@gmail.com
 - Role: Geospatial data architecture, GIS standards compliance
