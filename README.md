@@ -6,13 +6,18 @@ Built by waste pickers, for waste pickers — to replace "they say" with data.
 
 ## Features
 
-- **Offline-first** — all data persists in `localStorage`; no internet needed after initial load
+- **Offline-first PWA** — installable on home screen; works without internet after first load
+- **IndexedDB persistence** — crash-proof data layer for features, site visits, and photo evidence
 - **Dumpsite proximity mapping** — 30m (Hot Zone) and 60m (Buffer) zones around dumpsite boundaries
 - **4-ward support** — cycle through Mathare, Dandora, Kibera, Kawangware with synthetic collection point data
+- **Collection logging** — log material type (8 categories), container (Mkokoteni/Gunia), fullness, with live estimated kg
+- **Photo evidence** — native camera capture with pica client-side compression (~150 KB JPEG), stored in IndexedDB
 - **Hazard/incident tagging** — click to mark health incidents, harassment, unfair pricing directly on the map
 - **Collection Pricing tool** — adjust price per kg (KES 5–100) and see daily affected value per ward
 - **GPS geofence verification** — log site visits with high-accuracy GPS; records are timestamped and buffer-verified
-- **EPR Evidence Pack export** — download all tagged hazards and visit logs as a standard `.geojson` file, ready for QGIS/ArcGIS or presentation to NEMA/county officials
+- **City Dashboard** — aggregated stats: total kg collected, material breakdown, hazard count, visit verification rate
+- **Canvas-rendered map** — Leaflet with `preferCanvas` for smooth 60fps at 10,000+ points on low-end devices
+- **EPR Evidence Pack export** — download all tagged hazards, collection logs, and visit records as NEMA-aligned `.geojson`
 - **Custom GeoJSON upload** — bring your own collection point data
 
 ## Tech Stack
@@ -21,13 +26,14 @@ Built by waste pickers, for waste pickers — to replace "they say" with data.
 |-------|-----------|
 | Framework | React 18 |
 | Build | Vite 5 |
-| Map | Leaflet 1.9 + react-leaflet 4 |
+| Map | Leaflet 1.9 + react-leaflet 4 (Canvas renderer) |
 | Spatial | Turf.js 6.5 |
 | Styling | Tailwind CSS 3.3 |
 | Icons | Lucide React |
-| Persistence | localStorage (crash-proof wrapper) |
+| Persistence | IndexedDB via Dexie.js |
+| Image | Pica (Web Worker resize) |
+| PWA | vite-plugin-pwa + Workbox |
 | Testing | Vitest 4 |
-| Linting | ESLint (inherited) |
 
 ## Getting Started
 
@@ -48,11 +54,14 @@ npm run build
 ## Usage
 
 1. Open the app — a dark-themed side panel shows **Dumpsite Proximity** stats for the current ward
-2. Click **Mathare Valley** button in the Field Toolkit to cycle wards (Mathare → Dandora → Kibera → Kawangware)
+2. Click the ward button in the Field Toolkit to cycle wards (Mathare → Dandora → Kibera → Kawangware)
 3. Adjust the **Price per kg** slider to see total daily value for affected collection points
-4. Click **Tag Hazard / Incident** then click anywhere on the map to mark a location
-5. Click **Log Site Visit** to capture your GPS coordinates and verify you're within the dumpsite buffer
-6. Click **Download EPR Evidence Pack** to export all hazards and visit logs as `.geojson`
+4. **Log a collection**: select material type (Katoni, Chupa, Chuma, etc.), container (Gunia/Mkokoteni), fullness %, tap **Place on Map**, then click the desired location on the map
+5. **Add photo evidence**: tap **Capture Photo Evidence** to take a photo — it's compressed on-device and attached to the collection point
+6. **Tag hazards**: click **Tag Hazard / Incident**, then click any map location to mark an incident
+7. **Log a site visit**: click **Log Site Visit** to capture your GPS coordinates and verify you're within the dumpsite buffer
+8. **City Dashboard**: expand the collapsible dashboard in the side panel to see aggregated stats across all logged data
+9. Click **Download EPR Evidence Pack** to export all collections, hazards, and visits as NEMA-aligned `.geojson`
 
 ## Architecture
 
@@ -89,6 +98,24 @@ Push to `master` triggers GitHub Actions workflow (`.github/workflows/deploy.yml
 git push origin master
 ```
 
+## Team
+
+| Name | Email | Role |
+|------|-------|------|
+| Gerald Kombo | geraldshikunyi@gmail.com | Lead Developer |
+| Peter Maina | nj.peter.maina@gmail.com | Project Mocha |
+| Gisore Nyabuti | gisorenyabuti@gmail.com | Spatial Data |
+| Shadrack Otieno | shadrackmeshack7@gmail.com | Community Engagement |
+| James Murithi | jamespmurithi@gmail.com | Policy & Advocacy |
+
+Built for the **Innovation for Cities** program — a collaboration between Nairobi's waste picker cooperatives, urban tech builders, and policy advocates.
+
+### Event Schedule
+
+- **June 17** — Orientation (Online)
+- **June 22** — Ideation Sprint Workshop (In-Person)
+- **June 23** — Global Launch + Live Pitching (In-Person)
+
 ## Context
 
 This toolkit was built alongside the Nairobi waste picker organizing movement. The WhatsApp transcript in this repository documents real organizing around EPR pricing disputes, county consolidation, Dandora evictions, and the fight for formal recognition.
@@ -97,6 +124,7 @@ Key organizing pain points the toolkit addresses:
 - **Data gap** — NEMA uses a Ghana formula (41 kg/day) that doesn't fit Kenyan reality; pickers now collect their own site-level data
 - **Stigma → exclusion** — "Chokora" stigma means no contracts, insurance, or minimum wage; GPS-verified route logs build the case for formalization
 - **Meeting overload** — organizers spread across 17 sub-counties can now share a unified spatial picture
+- **City visibility** — the City Dashboard aggregates ward-level data for county environmental officers, translating field reality into policy-ready metrics
 
 ## License
 

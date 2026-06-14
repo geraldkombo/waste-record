@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MapViewer from './components/MapViewer';
 import LocalLedger from './components/LocalLedger';
 import CollectionForm from './components/CollectionForm';
+import CityDashboard from './components/CityDashboard';
 import { generateGeospatialData, calculateLVS } from './utils/spatialEngine';
 import { Recycle, BarChart3, Sliders } from 'lucide-react';
 import * as turf from '@turf/turf';
@@ -172,6 +173,8 @@ const App = () => {
           pendingCoords={pendingCoords}
           onSave={handleCollectionSave}
         />
+
+        <CityDashboard />
 
         <LocalLedger buffer60={spatialData?.buffer60} />
       </div>

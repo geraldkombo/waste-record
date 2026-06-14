@@ -6,8 +6,8 @@ import db from '../db/picketDb';
 const PICKetOverlay = ({ isPainting, togglePainting, onUndo, onClear, handleFileUpload, ward, wardLabel, cycleWard }) => {
   const handleExport = async () => {
     const strokes = await db.features.toArray();
-    const ledger = await db.visits.toArray();
-    generateAuditExport(strokes, ledger);
+    const visits = await db.visits.toArray();
+    generateAuditExport(strokes, visits);
   };
 
   return (
