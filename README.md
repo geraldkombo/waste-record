@@ -108,7 +108,7 @@ git push origin master
 | Name | Email | Role |
 |------|-------|------|
 | Gerald Kombo | geraldshikunyi@gmail.com | Lead Developer |
-| Peter Maina | nj.peter.maina@gmail.com | Project Mocha |
+| Peter Maina | nj.peter.maina@gmail.com | Blockchain & Value Chain |
 | Gisore Nyabuti | gisorenyabuti@gmail.com | Chairman, Kenya National Waste Pickers Welfare Association |
 | Shadrack Otieno | shadrackmeshack7@gmail.com | Community Engagement & Developer |
 | James Murithi | jamespmurithi@gmail.com | |

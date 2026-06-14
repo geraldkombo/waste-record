@@ -17,7 +17,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 - Contribution to Waste Record: Led the technical strategy (IndexedDB over localStorage, Canvas renderer, pica photo pipeline, EPR-aligned export), built the component architecture, authored the research documentation
 
 ### Peter Maina
-**Project Mocha**
+**Blockchain & Value Chain**
 
 - Email: nj.peter.maina@gmail.com
 - Role: Waste sector technology integration, stakeholder engagement
