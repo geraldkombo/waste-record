@@ -1,7 +1,5 @@
 # Team
 
-## Innovation for Cities 2026
-
 Building an offline-first waste picker spatial organizing toolkit for Nairobi's informal waste sector.
 
 ---
@@ -48,7 +46,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 
 ## Collaboration History
 
-This team came together through the **Innovation for Cities** program, convened around a shared recognition that Nairobi's waste picker cooperatives need — and deserve — their own data infrastructure.
+This team came together around a shared recognition that Nairobi's waste picker cooperatives need — and deserve — their own data infrastructure.
 
 The WhatsApp chat transcript included in this repository documents the organizing context that inspired the project. The team has been engaged with Nairobi's waste picker movement through various roles: community organizing, policy advocacy, technology building, and spatial data work.
 

@@ -113,14 +113,6 @@ git push origin master
 | Shadrack Otieno | shadrackmeshack7@gmail.com | Community & Developer |
 | James Murithi | jamespmurithi@gmail.com | Developer |
 
-Built for the **Innovation for Cities** program — a collaboration between Nairobi's waste picker cooperatives, urban tech builders, and policy advocates.
-
-### Event Schedule
-
-- **June 17** — Orientation (Online)
-- **June 22** — Ideation Sprint Workshop (In-Person)
-- **June 23** — Global Launch + Live Pitching (In-Person)
-
 ## Context
 
 This toolkit was built alongside the Nairobi waste picker organizing movement. The WhatsApp transcript in this repository documents real organizing around EPR pricing disputes, county consolidation, Dandora evictions, and the fight for formal recognition.
