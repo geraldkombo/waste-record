@@ -41,12 +41,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 - Contribution to PIMA: Authored the Sheng glossary, designed the field workflow for picker accessibility, ensured the tool reflects actual organizing practice rather than theoretical use cases
 
 ### James Murithi
-**Policy & Advocacy**
-
 - Email: jamespmurithi@gmail.com
-- Role: EPR policy analysis, regulatory alignment, advocacy strategy
-- Focus: Kenya's Sustainable Waste Management Act 2022, EPR Regulations 2024, NEMA compliance frameworks, county government engagement
-- Contribution to PIMA: Mapped the 5 EPR statutory categories to the GeoJSON schema, ensured export payloads are legally legible to NEMA auditors, advised on the "counter the Ghana formula" framing
 
 ---
 
