@@ -94,8 +94,11 @@ const App = () => {
     setPlacingCollection(false);
   };
 
-  const handleCollectionSave = async (feature) => {
-    await db.features.add(feature);
+  const handleCollectionSave = async (feature, photoBlob) => {
+    const featureId = await db.features.add(feature);
+    if (photoBlob) {
+      await db.media.add({ featureId, blob: photoBlob });
+    }
     setPendingCoords(null);
   };
 
