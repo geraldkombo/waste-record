@@ -1,6 +1,6 @@
 import Dexie from 'dexie';
 
-const db = new Dexie('PIMADatabase');
+const db = new Dexie('WasteRecordDB');
 
 db.version(1).stores({
   features: '++id, type, timestamp, ward',

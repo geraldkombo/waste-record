@@ -17,7 +17,7 @@ echo "Building Production Bundle..."
 npm run build
 
 if [ $? -eq 0 ]; then
-    echo "SUCCESS: PIMA — Waste Picker Spatial Organizing Toolkit is ready."
+    echo "SUCCESS: Waste Record is ready."
     exit 0
 else
     echo "Build Failed. Check dist/ logs."

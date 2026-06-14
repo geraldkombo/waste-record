@@ -1,1 +1,1 @@
-// setupTests — Vitest environment configuration for PIMA Toolkit
+// setupTests — Vitest environment configuration for Waste Record

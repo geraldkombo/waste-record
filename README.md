@@ -1,8 +1,6 @@
-# PIMA — Waste Picker Spatial Organizing Toolkit
+# Waste Record
 
-**PIMA** (Swahili: *to measure, to assess*) is a 100% client-side Web GIS toolkit built for waste picker cooperatives and organizers in Kenya. It runs offline, requires no server or internet in the field, and generates GPS-stamped GeoJSON evidence packs for EPR (Extended Producer Responsibility) advocacy.
-
-Built by waste pickers, for waste pickers — *PIMA na ujue* — Measure and know.
+Offline-first collection logging app for waste picker cooperatives in Kenya. Log materials, take photos, mark locations on a map, and export GPS-stamped evidence for EPR advocacy. No internet. No server. No cloud.
 
 > **Full documentation:**
 > - [Research Foundation](RESEARCH.md) — WhatsApp transcript analysis, global precedents, legal framework, density heuristics

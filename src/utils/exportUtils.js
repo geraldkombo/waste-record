@@ -11,7 +11,7 @@ export const generateAuditExport = (strokes, visits) => {
     type: 'Feature',
     geometry: s.geometry,
     properties: {
-      collection_id: s.properties?.collectionId || `pima-${Date.now()}`,
+      collection_id: s.properties?.collectionId || `wr-${Date.now()}`,
       timestamp_iso: s.properties?.timestamp
         ? new Date(s.properties.timestamp).toISOString()
         : new Date().toISOString(),
@@ -46,8 +46,8 @@ export const generateAuditExport = (strokes, visits) => {
     type: 'FeatureCollection',
     metadata: {
       exportedAt: new Date().toISOString(),
-      source: 'pima',
-      toolkit: 'PIMA — Waste Picker Spatial Organizing Toolkit',
+      source: 'waste-record',
+      toolkit: 'Waste Record',
       visitsLogged: (visits || []).length,
       hazardsTagged: features.length,
       epr_framework: 'Kenya Sustainable Waste Management (EPR) Regulations 2024'

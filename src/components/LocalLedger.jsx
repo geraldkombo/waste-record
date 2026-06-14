@@ -42,7 +42,7 @@ const LocalLedger = ({ buffer60 }) => {
         const isVerified = buffer60 ? turf.booleanPointInPolygon(pt, buffer60) : false;
 
         const record = {
-          visitId: 'PIMA-' + Math.floor(10000 + Math.random() * 90000),
+          visitId: 'WR-' + Math.floor(10000 + Math.random() * 90000),
           coords: [latitude.toFixed(5), longitude.toFixed(5)],
           timestamp: new Date().toISOString(),
           verified: isVerified

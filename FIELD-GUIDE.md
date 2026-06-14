@@ -2,7 +2,7 @@
 
 ## Quick Start
 
-1. **Open PIMA** on your phone's browser. Tap the browser menu → "Add to Home Screen" to install as an app.
+1. **Open Waste Record** on your phone's browser. Tap the browser menu → "Add to Home Screen" to install as an app.
 2. **Allow GPS** when prompted. The app works without GPS but site verification requires location access.
 3. **Allow camera** when using photo evidence. Photos are compressed on your phone and never uploaded anywhere.
 
@@ -10,7 +10,7 @@
 
 ## Sheng Glossary
 
-Using Sheng (Nairobi street slang) in the interface makes the tool feel like it belongs to the community. Here are the terms used in PIMA:
+Using Sheng (Nairobi street slang) in the interface makes the tool feel like it belongs to the community. Here are the terms used in Waste Record:
 
 | Term | Meaning | Used In |
 |------|---------|---------|
@@ -33,7 +33,7 @@ Using Sheng (Nairobi street slang) in the interface makes the tool feel like it 
 ### Step-by-Step
 
 ```
-1. Open PIMA → side panel shows Dumpsite Proximity stats
+1. Open Waste Record → side panel shows Dumpsite Proximity stats
 2. Select a ward (Mathare → Dandora → Kibera → Kawangware)
 3. Scroll to "Log Collection" section
 4. Select material type:
@@ -162,7 +162,7 @@ The GeoJSON file contains:
 
 ## Sheng-Localized Interface Reference
 
-| English | PIMA UI | Location |
+| English | Waste Record UI | Location |
 |---------|-----------|----------|
 | Collection Route Ledger | **Baze Route Ledger** | Side panel |
 | Log Site Visit | **Log Site Visit** | Baze Route Ledger |

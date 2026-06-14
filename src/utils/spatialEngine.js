@@ -19,16 +19,6 @@ export const calculateVolume = (area, height, rs = 1.0) => {
   return area * height * rs;
 };
 
-export const calculateRunoff = (p, s) => {
-  const ia = 0.2 * s;
-  if (p <= ia) return 0;
-  return Math.pow(p - ia, 2) / ((p - ia) + s);
-};
-
-export const calculateLVS = (fri, lhi, gsc, wf = 0.4, wh = 0.4, wg = 0.2) => {
-  return (wf * fri) + (wh * lhi) - (wg * gsc);
-};
-
 export const generateGeospatialData = (ward) => {
   const wardConfig = {
     mathare: {
@@ -73,16 +63,7 @@ export const generateGeospatialData = (ward) => {
     const area = turf.area(pointPoly);
     const volume = calculateVolume(area, height);
 
-    const lhi = Math.random() * 10;
-    const gsc = Math.random() * 4;
-
     const distToDumpsite = turf.pointToLineDistance(pt, dumpsiteLine, { units: 'kilometers' }) * 1000;
-
-    let fri = 1;
-    if (distToDumpsite <= 30) fri = 10;
-    else if (distToDumpsite <= 60) fri = 5;
-
-    const lvs = calculateLVS(fri, lhi, gsc);
 
     let status = 'Safe';
     if (turf.booleanIntersects(pointPoly, buffer30)) {
@@ -91,18 +72,11 @@ export const generateGeospatialData = (ward) => {
       status = 'Zone 2';
     }
 
-    const s = 40 + Math.random() * 110;
-    const runoff = calculateRunoff(112, s);
-
     pointPoly.properties = {
       id: `COL-${1000 + i}`,
       height,
       area,
       volume,
-      runoff,
-      lhi,
-      gsc,
-      lvs,
       status,
       distToDumpsite,
       dailyValue: volume * 41

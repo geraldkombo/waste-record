@@ -11,9 +11,9 @@ export default defineConfig({
       filename: 'sw.js',
       registerType: 'autoUpdate',
       manifest: {
-        name: 'PIMA — Waste Picker Spatial Organizing Toolkit',
-        short_name: 'PIMA',
-        description: 'Offline-first waste picker organizing toolkit for EPR advocacy and hazard mapping',
+        name: 'Waste Record',
+        short_name: 'WasteRecord',
+        description: 'Offline-first collection logging for waste picker cooperatives',
         theme_color: '#0f172a',
         background_color: '#0f172a',
         display: 'standalone',

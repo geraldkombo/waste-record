@@ -8,7 +8,7 @@ Kenya's **Sustainable Waste Management Act (2022)** and the **Sustainable Waste 
 2. **Monthly Volume Declarations (MVDs)** tracking tonnages introduced to market
 3. **5 statutory categories** of Producer Responsibility Organizations
 
-PIMA's GeoJSON export schema is designed to produce data that is immediately legible within this regulatory framework, enabling waste picker cooperatives to present verifiable collection evidence to PROs, NEMA, and county environmental officers.
+Waste Record's GeoJSON export schema is designed to produce data that is immediately legible within this regulatory framework, enabling waste picker cooperatives to present verifiable collection evidence to PROs, NEMA, and county environmental officers.
 
 ---
 
@@ -22,7 +22,7 @@ PIMA's GeoJSON export schema is designed to produce data that is immediately leg
   "metadata": {
     "exportedAt": "2026-06-14T18:37:07.000Z",
     "source": "pima",
-    "toolkit": "PIMA — Waste Picker Spatial Organizing Toolkit",
+    "toolkit": "Waste Record",
     "visitsLogged": 12,
     "hazardsTagged": 8,
     "epr_framework": "Kenya Sustainable Waste Management (EPR) Regulations 2024"
@@ -93,7 +93,7 @@ PIMA's GeoJSON export schema is designed to produce data that is immediately leg
     "coordinates": [36.8575, -1.2565]
   },
   "properties": {
-    "visit_id": "PIMA-47291",
+    "visit_id": "WR-47291",
     "timestamp_iso": "2026-06-14T10:15:00.000Z",
     "gps_verified": true,
     "feature_type": "site_visit"
@@ -111,7 +111,7 @@ PIMA's GeoJSON export schema is designed to produce data that is immediately leg
 |-------|------|-------------|---------|
 | `exportedAt` | ISO 8601 | When the export was generated | `2026-06-14T18:37:07.000Z` |
 | `source` | string | Application identifier | `pima` |
-| `toolkit` | string | Full application name | `PIMA — Waste Picker Spatial Organizing Toolkit` |
+| `toolkit` | string | Full application name | `Waste Record` |
 | `visitsLogged` | integer | Count of site visit records in export | `12` |
 | `hazardsTagged` | integer | Count of hazard/incident records | `8` |
 | `epr_framework` | string | Legal framework reference | `Kenya Sustainable Waste Management (EPR) Regulations 2024` |
@@ -137,7 +137,7 @@ PIMA's GeoJSON export schema is designed to produce data that is immediately leg
 
 | Field | Type | Description | Values |
 |-------|------|-------------|--------|
-| `visit_id` | string | Unique identifier | `PIMA-{random}` |
+| `visit_id` | string | Unique identifier | `WR-{random}` |
 | `timestamp_iso` | ISO 8601 | When the visit was logged | `2026-06-14T10:15:00.000Z` |
 | `gps_verified` | boolean | Whether coords fall within dumpsite buffer | `true`, `false` |
 | `feature_type` | string | Record type discriminator | `site_visit` |
@@ -148,7 +148,7 @@ PIMA's GeoJSON export schema is designed to produce data that is immediately leg
 
 Per the First Schedule of Kenya's **Sustainable Waste Management (EPR) Regulations, 2024**:
 
-| Code | Category | Description | PIMA Materials |
+| Code | Category | Description | Materials |
 |------|----------|-------------|-----------------|
 | 1 | Non-hazardous packaging | Plastics, paper, glass, aluminum, cardboard | PET, HDPE, CARDBOARD, PAPER, ALUMINUM, STEEL, GLASS |
 | 2 | Hazardous products packaging | Industrial chemicals, hazardous materials | (Future) |
@@ -156,7 +156,7 @@ Per the First Schedule of Kenya's **Sustainable Waste Management (EPR) Regulatio
 | 4 | End-of-life motor vehicles | Vehicles, tyres | (Future) |
 | 5 | Non-packaging items | Organic waste, textiles, other | ORGANIC |
 
-Currently, PIMA defaults all material types to **Category 1** (non-hazardous packaging) since the initial target materials (plastics, paper, glass, metals, cardboard) fall under this category. Organic waste maps to Category 5. Future iterations will expand to include Categories 2–4.
+Currently, Waste Record defaults all material types to **Category 1** (non-hazardous packaging) since the initial target materials (plastics, paper, glass, metals, cardboard) fall under this category. Organic waste maps to Category 5. Future iterations will expand to include Categories 2–4.
 
 ---
 

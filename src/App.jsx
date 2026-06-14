@@ -3,7 +3,7 @@ import MapViewer from './components/MapViewer';
 import LocalLedger from './components/LocalLedger';
 import CollectionForm from './components/CollectionForm';
 import CityDashboard from './components/CityDashboard';
-import { generateGeospatialData, calculateLVS } from './utils/spatialEngine';
+import { generateGeospatialData } from './utils/spatialEngine';
 import { Recycle, BarChart3, Sliders } from 'lucide-react';
 import * as turf from '@turf/turf';
 import L from 'leaflet';
@@ -110,14 +110,11 @@ const App = () => {
           <div className="flex items-center gap-2">
             <Recycle className="w-8 h-8 text-emerald-400" />
             <h1 className="text-2xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-amber-400">
-              PIMA
+              Waste Record
             </h1>
           </div>
           <p className="text-xs text-slate-400 mt-2 font-medium">
-            Waste Picker Spatial Organizing Toolkit
-          </p>
-          <p className="text-[10px] mt-1 italic text-slate-500">
-            PIMA na ujue — Measure and know
+            Log what you collect. Show what you're worth.
           </p>
         </div>
 

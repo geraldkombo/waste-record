@@ -1,7 +1,7 @@
 {
-  "name": "pima",
+  "name": "waste-record",
   "version": "1.0.0",
-  "description": "PIMA — Offline-first waste picker spatial organizing toolkit for participatory EPR advocacy, hazard mapping, and GeoJSON evidence export.",
+  "description": "Waste Record — Offline-first collection logging and evidence export for waste picker cooperatives.",
   "type": "module",
   "scripts": {
     "dev": "vite",

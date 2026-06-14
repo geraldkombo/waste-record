@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { calculateBuffer, validateGeoJSON } from './spatialEngine';
 
-describe('PIMA Spatial Engine', () => {
+describe('Spatial Engine', () => {
   it('should calculate buffer within millimeter tolerance', () => {
     const mockPoint = { type: 'Point', coordinates: [36.82, -1.29] };
     const buffer = calculateBuffer(mockPoint, 100); // 100m

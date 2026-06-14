@@ -14,7 +14,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 - Email: geraldshikunyi@gmail.com
 - Role: Product vision, architecture decisions, full-stack implementation
 - Focus: Zero-server architecture, GeoJSON schema design, PWA deployment, team coordination
-- Contribution to PIMA: Led the technical strategy (IndexedDB over localStorage, Canvas renderer, pica photo pipeline, EPR-aligned export), built the component architecture, authored the research documentation
+- Contribution to Waste Record: Led the technical strategy (IndexedDB over localStorage, Canvas renderer, pica photo pipeline, EPR-aligned export), built the component architecture, authored the research documentation
 
 ### Peter Maina
 **Project Mocha**
@@ -22,7 +22,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 - Email: nj.peter.maina@gmail.com
 - Role: Waste sector technology integration, stakeholder engagement
 - Focus: Bridging informal sector needs with technical solutions, cooperative digital tools, material value chain analysis
-- Contribution to PIMA: Advised on material classification, pricing dynamics, and cooperative data needs from Project Mocha's waste sector experience
+- Contribution to Waste Record: Advised on material classification, pricing dynamics, and cooperative data needs from Project Mocha's waste sector experience
 
 ### Gisore Nyabuti
 **Spatial Data Specialist**
@@ -30,7 +30,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 - Email: gisorenyabuti@gmail.com
 - Role: Geospatial data architecture, GIS standards compliance
 - Focus: GeoJSON schema design, coordinate systems, spatial analysis methodology, map visualization
-- Contribution to PIMA: Ensured spatial data rigor (coordinate precision, buffer accuracy, GeoJSON validity), guided the EPR schema alignment with NEMA-compatible formats
+- Contribution to Waste Record: Ensured spatial data rigor (coordinate precision, buffer accuracy, GeoJSON validity), guided the EPR schema alignment with NEMA-compatible formats
 
 ### Shadrack Otieno
 **Community Engagement Lead**
@@ -38,7 +38,7 @@ Building an offline-first waste picker spatial organizing toolkit for Nairobi's 
 - Email: shadrackmeshack7@gmail.com
 - Role: Community liaison, participatory design, field testing
 - Focus: Sheng localization, semi-literate user workflows, cooperative organizing structures, field testing protocols
-- Contribution to PIMA: Authored the Sheng glossary, designed the field workflow for picker accessibility, ensured the tool reflects actual organizing practice rather than theoretical use cases
+- Contribution to Waste Record: Authored the Sheng glossary, designed the field workflow for picker accessibility, ensured the tool reflects actual organizing practice rather than theoretical use cases
 
 ### James Murithi
 - Email: jamespmurithi@gmail.com

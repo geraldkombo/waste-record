@@ -131,7 +131,7 @@ useLiveQuery(() => db.features.toArray()) → FeatureCollection → GeoJSON → 
 ```
 App
 ├── Side Panel (w-[420px])
-│   ├── Header (PIMA branding)
+│   ├── Header (Waste Record branding)
 │   ├── Dumpsite Proximity stats
 │   ├── Collection Pricing slider
 │   ├── CollectionForm
