@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/waste-record/sw.js', { scope: '/waste-record/' })})}
